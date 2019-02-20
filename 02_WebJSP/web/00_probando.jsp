@@ -1,6 +1,6 @@
 <%-- 
     Document   : 00_probando
-    Created on : 19-feb-2019, 16:30:08
+    Created on : 19-feb-2019, 16:30:07
     Author     : USUARIO
 --%>
 
@@ -12,18 +12,21 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Probando JSP</h1>
-        <% 
+        <%@include file="cabecera.jsp" %>
+        <%= dameTitulo("Probando JSP") %>                
+        
+        <%
             double num = Math.random();
-            if (num > 0.8) {
-                
-            
-        %>
+            if(num > 0.8){
+        %>   
+        
         <h2>¡Que tengas un buen día!</h2>
-        <% } else { %>
-        <h2>Bueno, la vida continua...</h2> 
+        
+        <% }else{ %>
+            <h2>Bueno, la vida continúa...</h2>
         <% } %>
         <p><%= num %></p>
-        <a href="00_probando.jsp"><h3>Prueba de nuevo. </h3></a>
+        
+        <a href="00_probando.jsp"><h3>Prueba de nuevo</h3></a>
     </body>
 </html>

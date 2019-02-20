@@ -1,6 +1,6 @@
 <%-- 
-    Document   : 03_ejer_scriptlet
-    Created on : 19-feb-2019, 17:14:05
+    Document   : 03_ejer_scriplet
+    Created on : 19-feb-2019, 17:14:26
     Author     : USUARIO
 --%>
 
@@ -9,40 +9,38 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tabla de multiplicar</title>
+        <title>JSP Page</title>
     </head>
     <body>
-        <h1>Tabla de multiplicar</h1>
-        
+        <%@include file="cabecera.jsp" %>
+        <%= dameTitulo("Tablas de multiplicar") %>
         <%!
         // Declaraciones
-        int i,n;
+        int i;
+        int m;
+        %>
+        <%
+            for(/*int*/ m = 0; m <= 10; m++){
         %>
         
-       <h1>Tablas de multiplicar</h1>
-
-        <%-- Muestra un Tabla con sus TRs, TDs,
-    de la tabla de multiplicar del 7 con JSP --%>
-       <h2>Tabla de multiplicar del 7 con JSP</h2>
-        <% out.println("<h3>Evitar usar HTML en texto Java</h3>"); %>
-
-        <% for (/*int*/ n = 1; n <= 10; n++ ) { %>
-
-    <table style="border-width: 4px; border-style: double; display: inline-block;">
-            <th>
-                <td>Tabla del <%= n %> </td>
-            </th>
-            <% for (/*int*/ i = 1; i <= 10; i++ ) { %>
+        <table>
             <tr>
-                <td><%= n %> por</td>
-                <td><%= i %></td>
-                <td>es <%= i * n %> </td>
+                <th>Tabla del <%= m %></th>
             </tr>
-            <% } %>
-    </table>
-
+        
+        <%-- Muestra una tabla de multiplicar --%>
+        <%
+            for(/*int*/ i = 0; i <= 10; i++){
+        %>
+            <tr>                
+                <td><%= m %> por </td>
+                <td><%= i %></td>
+                <td>es <%= i*m %></td>
+            </tr
+        <%       
+            }
+        %>
+        </table>
         <% } %>
-
-
     </body>
 </html>
