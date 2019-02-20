@@ -14,19 +14,35 @@
     <body>
         <h1>Tabla de multiplicar</h1>
         
-        <%-- Mostrar una tabla con sus Trs, Tds, de la tabla del siete --%>
-        <h2> Tabla de multiplicar del siete </h2>
-        <table border="1">
-            <% for (int i = 1; i <= 10; i++ ) { %>
-            <% for (int j = 0; j <= 10; j++)  { %>
-                
-         <tr>
-                <td><%= i + "*" %></td>
-                <td><%= j + "=" %> </td>
-                <td><%= i * j   %> </td>
+        <%!
+        // Declaraciones
+        int i,n;
+        %>
+        
+       <h1>Tablas de multiplicar</h1>
+
+        <%-- Muestra un Tabla con sus TRs, TDs,
+    de la tabla de multiplicar del 7 con JSP --%>
+       <h2>Tabla de multiplicar del 7 con JSP</h2>
+        <% out.println("<h3>Evitar usar HTML en texto Java</h3>"); %>
+
+        <% for (/*int*/ n = 1; n <= 10; n++ ) { %>
+
+    <table style="border-width: 4px; border-style: double; display: inline-block;">
+            <th>
+                <td>Tabla del <%= n %> </td>
+            </th>
+            <% for (/*int*/ i = 1; i <= 10; i++ ) { %>
+            <tr>
+                <td><%= n %> por</td>
+                <td><%= i %></td>
+                <td>es <%= i * n %> </td>
             </tr>
             <% } %>
-            <% } %>
-        </table>
-     </body>
+    </table>
+
+        <% } %>
+
+
+    </body>
 </html>
