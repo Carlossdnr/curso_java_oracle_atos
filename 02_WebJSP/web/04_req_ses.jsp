@@ -16,7 +16,34 @@
         <form action="04_req_ses.jsp" method="get">
             <p>Nombre y apellidos: </p>  
             <p><input type="text" name="nombre_apell" id="nombre_apell" 
-                      autocomplete="true" size="50" maxlength="100"/></p>
+                      autocomplete="true" size="50" maxlength="100"
+                      required="true"
+                      placeholder="Introduzca una descripción detallada"/></p>
+            <p>Descripcion: </p>
+            <textarea id="descripcion" name="descripcion" 
+                      required="true" cols="100" rows="10"
+                      placeholder="Introduzca una descripción detallada"> 
+            </textarea>
+            <p>Email: </p>
+            <p><input id="email" type="text" name="email"
+                      required="true" cols="100" rows="10"
+                      placeholder="Introduzca un email" >
         </form>
+        <%
+            String nomApell = request.getParameter("nombre_apell");
+            String desc = request.getParameter("descripcion");
+            String email = request.getParameter("email");
+            
+            if (nomApell.length() > 1) {
+                if (desc.length() > 5) {
+                    // Validación del email
+                    
+                } else {
+                    out.println("<h3>Pon una descripción </h3>");
+                }
+            } else {
+                out.println("<h3>¿No tienes nombre?</h3>");
+            }
+            %>
     </body>
 </html>
