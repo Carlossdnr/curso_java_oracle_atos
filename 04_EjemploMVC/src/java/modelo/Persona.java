@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
- * POJO para datos. 
+ *  POJO para datos
  * @author USUARIO
  */
-public class Persona {
+public class Persona implements Serializable{  
     
     private String nombre;
 
@@ -19,7 +21,7 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
     }
-    
+
     /**
      * Get the value of edad
      *
