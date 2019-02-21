@@ -17,6 +17,7 @@ public class GestionPersona {
     // private Persona persona;
 
     private static GestionPersona instancia;
+    private IPersonaDAO daoPersona = FicheroPersona.getInstancia();
     private GestionPersona() { }    
     public static GestionPersona getInstancia() {
         if (instancia == null) instancia = new GestionPersona();
@@ -34,7 +35,7 @@ public class GestionPersona {
         if (validarDatosPersona(nombre, edad)) {
             if (validarEdad(edad)) {
                 int iEdad = Integer.parseInt(edad);
-                if (FicheroPersona.guardarPersona(new Persona(nombre, iEdad)))
+                if (daoPersona.guardarPersona(new Persona(nombre, iEdad)))
                     return TipoResultado.OK;
                 else
                     return TipoResultado.ERR_IO;
@@ -46,6 +47,6 @@ public class GestionPersona {
         }
     }
     public Persona getPersona() {
-        return FicheroPersona.leerPersona();
+        return daoPersona.leerPersona();
     }
 }
