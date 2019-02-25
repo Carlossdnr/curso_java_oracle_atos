@@ -43,8 +43,8 @@ public class DerbyDBUsuario implements IUsuarioDAO {
                         + "'" + persona.getNombre() + "', "
                         + persona.getEdad() + ", '" + persona.getEmail() + "', '" + persona.getPassword() + "')";
             Statement stmt = con.createStatement();
-            ResultSet res = stmt.executeQuery(squery);
-            return false;
+            stmt.executeUpdate(squery);
+            return true;
         } catch (SQLException ex) {
             return false;
         }
