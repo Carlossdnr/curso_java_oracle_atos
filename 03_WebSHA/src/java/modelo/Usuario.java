@@ -5,22 +5,44 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author USUARIO
  */
-public class Usuario {
+public class Usuario implements Serializable {
     
+    private int id;
     private String nombre;
     private int edad;
     private String email;
     private String password;
 
-    public Usuario(String nombre, int edad, String email, String password) {
+    public Usuario(int id, String nombre, int edad, String email, String password) {
+        this.id = id;
         this.nombre = nombre;
         this.edad = edad;
         this.email = email;
         this.password = password;
+    }
+
+    /**
+     * Get the value of id
+     *
+     * @return the value of id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @param id new value of id
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**

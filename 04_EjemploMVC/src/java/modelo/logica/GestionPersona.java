@@ -23,6 +23,10 @@ public class GestionPersona {
         if (instancia == null) instancia = new GestionPersona();
         return instancia;
     }
+
+    public TipoResultado guardarPersona(String nombre, String edad, String email, String password, String eId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public enum TipoResultado {OK, SIN_VALORES, EDAD_MAL, ERR_IO};
     
     private boolean validarDatosPersona(String nombre, String edad) {
