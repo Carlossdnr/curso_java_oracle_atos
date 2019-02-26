@@ -21,63 +21,55 @@ public class ServicioUsuarios {
     private ServicioUsuarios() {
         persistencia = new DerbyDBUsuario();
     }
-    
-
     public static ServicioUsuarios getInstancia() {
         return instancia;
     }
-   
-    public Usuario crearUsuarioValido(int id, String nom, String strEdad, String email, String password){
-    
-        int iEdad = 0;
+    public Usuario crearUsuarioValido(int id, String nom, String strEdad, String email, String password) {
+        if (!nom.isEmpty() && !strEdad.isEmpty() && !email.isEmpty() && !password.isEmpty()){    
+        }
         if (strEdad.matches("^[1-9][0-9]*$")) {
             try {
+                int iEdad = 0; 
                 iEdad = Integer.parseInt(strEdad);
-                if(iEdad > 18 ){
-                    if(email.matches("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$")) {
-                        return new Usuario(id, nom, iEdad, email, password);
-                    }
+                if (iEdad > 18) {
+                   if (email.matches("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$")) {
+                       return new Usuario(id, nom, iEdad, email, password);
+                   } 
                 }
-                
             } catch (NumberFormatException ex) {
             }
-        }    
-        return null; 
+        }
+        return null;
     }
-            
-            
     public Resultado add(String nom, String strEdad, String email, String passwd) {
-        Usuario nuevoUsu = crearUsuarioValido(0, nom, strEdad,email, passwd);
+        
+        Usuario nuevoUsu = crearUsuarioValido(0, nom, strEdad, email, passwd);
         if (nuevoUsu != null) {
             if (this.persistencia.crear(nuevoUsu)) {
                 return Resultado.Ok;
-            }else {
+            } else {
                 return Resultado.ErrorDB;
             }
+        } else {
+            return Resultado.CamposMal;
         }
-        return Resultado.CamposMal;
     }
-    
-    public ArrayList<Usuario> obtenerTodos(){
-        
-        
-        
-        
+    public ArrayList<Usuario> obtenerTodos() {
         return null;
     }
-
-    public Resultado modificar(String nom, String strEdad, String email, String passwd){
+    public Usuario obtenerUno(String email) {
+        return null;
+    }
+    public Resultado modificar(int id, String nom, String strEdad, String email, String passwd) {
         return Resultado.CamposMal;
     }
-    
-    public Resultado eliminar (String email) {
+    public Resultado eliminar(String email) {
         return Resultado.CamposMal;
     }
-    
-    public Resultado validarLoginUsuario(String email, String password){
+    public Resultado validarLoginUsuario(String email, String password) {
         return Resultado.NoLogin;
     }
- /*   public Resultado add(String nom, int edad, String email, String passwd) {
+   /* public Resultado add(String nom, int edad, String email, String passwd) {
 
         if ( !nom.isEmpty() && edad > 18 && email != "" && passwd != "") {
             Usuario nuevoUsu = new Usuario(0, nom, edad, email, passwd);
@@ -86,7 +78,7 @@ public class ServicioUsuarios {
         } else {
             return Resultado.CamposMal;
         }
-  */  
+    }*/
     public ArrayList<Usuario> listar() {
         return persistencia.obtenerTodos();
     }
