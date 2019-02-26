@@ -31,7 +31,7 @@ public class ServicioUsuarios {
             try {
                 int iEdad = 0; 
                 iEdad = Integer.parseInt(strEdad);
-                if (iEdad > 18) {
+                if (iEdad >= 18) {
                    if (email.matches("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$")) {
                        return new Usuario(id, nom, iEdad, email, password);
                    } 

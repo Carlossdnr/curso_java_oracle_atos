@@ -124,7 +124,7 @@ public class DerbyDBUsuario implements IUsuarioDAO {
         try (Connection con = DriverManager.getConnection(
           Constantes.CONEX_DERBY_DB,Constantes.USUARIO_DERBY_DB,Constantes.PASSWD_DERBY_DB )) {
             
-            String squery = "DELETE FROM usuario WHERE email=?";            
+            String squery = "DELETE FROM usuario WHERE email = ?";            
             PreparedStatement stmt = con.prepareStatement(squery);
             stmt.setString(1, email);
             stmt.executeUpdate();
