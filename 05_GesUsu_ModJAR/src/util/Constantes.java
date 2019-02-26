@@ -11,6 +11,6 @@ package util;
  */
 public class Constantes {
     public static final String CONEX_DERBY_DB = "jdbc:derby://localhost:1527/UsuariosDB";
-    public static final String USUARIO_DERBY_DB = "usuario";
-    public static final String PASSWD_DERBY_DB = "usuario";
+    public static final String USUARIO_DERBY_DB = "root";
+    public static final String PASSWD_DERBY_DB = "root";
 }
