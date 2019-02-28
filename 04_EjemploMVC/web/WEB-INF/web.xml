@@ -6,7 +6,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Procesar</servlet-name>
-        <url-pattern>/Procesar.do</url-pattern>
+        <url-pattern>/procesar.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

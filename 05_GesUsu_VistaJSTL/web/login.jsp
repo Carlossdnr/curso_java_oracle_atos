@@ -13,6 +13,7 @@
         <form name="form1" method="get" action="./usuarios.do">
             <table border="1">
                <tr><td>Email</td><td>
+                       <%-- <%= Utilidades.getCookie(request, "email") %>  --%>
                        <input type="email" name="email" id="email" value="${cookie.email.value}"/>  </td></tr> 
                 <tr><td>Contraseña</td><td>
                     <input type="password" name="password" id="password" value="${cookie.password.value}"/>  </td></tr> 
@@ -21,8 +22,3 @@
         </form>
     </body>
 </html>
-
-<%--
-<%= Utilidades.getCookie(request, "email") %>
-<%= Utilidades.getCookie(request, "password") %>
---%>

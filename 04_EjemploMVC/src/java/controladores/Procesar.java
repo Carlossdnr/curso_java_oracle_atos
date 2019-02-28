@@ -32,12 +32,9 @@ public class Procesar extends HttpServlet {
             throws ServletException, IOException {
         String nombre = request.getParameter("nombre");
         String edad = request.getParameter("edad");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String eId = request.getParameter("eId");
         
         GestionPersona.TipoResultado resultado;
-        resultado = GestionPersona.getInstancia().guardarPersona(nombre, edad, email, password, eId);
+        resultado = GestionPersona.getInstancia().guardarPersona(nombre, edad);
         switch (resultado) {
             case OK:
                 request.getSession().setAttribute("persona1", 
@@ -62,7 +59,7 @@ public class Procesar extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Pequeña descripcion";
+        return "Short description";
     }// </editor-fold>
 
 }

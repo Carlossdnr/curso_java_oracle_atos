@@ -1,6 +1,6 @@
 <%-- 
     Document   : 01_expresiones
-    Created on : 19-feb-2019, 16:46:26
+    Created on : 19-feb-2019, 16:46:11
     Author     : USUARIO
 --%>
 
@@ -12,19 +12,19 @@
         <title>Expresiones JSP</title>
     </head>
     <body>
-        <%@include file="cabecera.jsp" %>
-        <%= dameTitulo("Expresiones JSP") %>  
-        
+        <%@ include file="cabecera.jsp" %>
+        <%= dameTitulo("Ejemplos de expresiones JSP") %> 
         <!-- Mostrar la fecha y la hora actual -->
-        <%= new java.util.Date().toString() %> <br/>
+        <%= new java.util.Date().toString() %>  <br/>
         
         <%-- Convertir a mayúsculas un String --%>
-        <%= "texto en mayúsculas".toUpperCase() %> <br/>
+        <%= "Texto en mayúsculas".toUpperCase() %>  <br/>
         
         <%-- Resultado de una expresión aritmética --%>
-        <%= (5 + 3) / (float) 3 %> <br/>
+        <%= (5 + 3) / (float) 3  %>  <br/>
         
         <%-- Generar un número aleatorio entre 0 y 99 --%>
-        <%= new java.util.Random().nextInt(100) %>
+        <%= new java.util.Random().nextInt(100) %>   <br/>
+                
     </body>
 </html>

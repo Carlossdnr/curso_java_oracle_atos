@@ -12,6 +12,7 @@ import modelo.Persona;
  * @author USUARIO
  */
 public interface IPersonaDAO {
+    
     boolean guardarPersona(Persona persona);
     
     Persona leerPersona();

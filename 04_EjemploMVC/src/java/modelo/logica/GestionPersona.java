@@ -7,6 +7,7 @@ package modelo.logica;
 
 import modelo.Persona;
 import modelo.persistencia.FicheroPersona;
+import modelo.persistencia.JavaJDPersona;
 
 /**
  *
@@ -17,15 +18,11 @@ public class GestionPersona {
     // private Persona persona;
 
     private static GestionPersona instancia;
-    private IPersonaDAO daoPersona = FicheroPersona.getInstancia();
+    private IPersonaDAO daoPersona = new JavaJDPersona(); //FicheroPersona.getInstancia();
     private GestionPersona() { }    
     public static GestionPersona getInstancia() {
         if (instancia == null) instancia = new GestionPersona();
         return instancia;
-    }
-
-    public TipoResultado guardarPersona(String nombre, String edad, String email, String password, String eId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public enum TipoResultado {OK, SIN_VALORES, EDAD_MAL, ERR_IO};
     

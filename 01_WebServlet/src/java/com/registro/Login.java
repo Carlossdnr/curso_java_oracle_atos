@@ -38,9 +38,9 @@ public class Login extends HttpServlet {
             String psswd = Utilidades.comprobarParam(request, out, "psswd");
             if ( email != "" && psswd != "") {
                 if (ServicioUsuarios.getInstancia().validacionPasswd(email, psswd)) {
-                    out.println("<h2>Usuario validado con exito</p>");
+                    out.println("<h2>Usuario validado</p>");
                 } else {
-                    out.println("<h2>El usuario o la contraseña no coinciden</p>");
+                    out.println("<h2>El usuario o la passwd están mu mal</p>");
                 }
             }
             /* TODO output your page here. You may use following sample code. */
@@ -49,7 +49,7 @@ public class Login extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet Login</title>");            
             out.println("</head>");
-            out.println("<body bgcolor=\"#CCBBAA\">");
+            out.println("<body>");
             out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");

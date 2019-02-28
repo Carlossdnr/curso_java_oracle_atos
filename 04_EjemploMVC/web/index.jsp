@@ -23,7 +23,7 @@
     </head>
     <body>
         <h1>Ejemplo MVC</h1>
-        <form action="Procesar.do" method="GET">
+        <form action="procesar.do" method="GET">
             Nombre: <input id="nombre" type="text" name="nombre" 
                            value="<%= nombre %>"/><br/>
             Edad: <input id="edad" type="text" name="edad" value="<%= edad %>"/><br/>

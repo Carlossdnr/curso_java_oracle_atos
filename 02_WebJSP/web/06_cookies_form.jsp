@@ -1,6 +1,6 @@
 <%-- 
-    Document   : 06_cookies_form
-    Created on : 20-feb-2019, 16:19:47
+    Document   : 06_cookies_form.jsp
+    Created on : 20-feb-2019, 16:19:43
     Author     : USUARIO
 --%>
 
@@ -12,12 +12,11 @@
         <title>Formulario cookies JSP</title>
     </head>
     <body>
-        <%@include file="cabecera.jsp" %>
-        <%= dameTitulo("Formulario cookies JSP") %>
-        <form action="06_cookies.jsp" method="get">
-            Nombre: <input type="text" id="nombre" name="nombre"/><br/>
-            Apellido: <input type="text" id="apellidos" name="apellidos"/><br/>
+        <h1>Formulario cookies JSP</h1>
+        <form action="06_cookies.jsp" method="GET">
+            Nombre: <input  id="nombre" type="text" name="nombre"/> <br/>
+            Apellidos: <input  id="apellidos" type="text" name="apellidos"/> <br/>
             <input type="submit" value="Enviar"/>
         </form>
-            
+    </body>
 </html>

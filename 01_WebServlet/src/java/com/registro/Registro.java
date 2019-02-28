@@ -43,10 +43,10 @@ public class Registro extends HttpServlet {
             String psswd = Utilidades.comprobarParam(request, out, "psswd");
             if (nom != "" && strEdad != "" && email != "" && psswd != "") {
                 if (edad < 18)
-                    out.println("<h2>Eres menor de edad , no puedes registrarte.</p>");
+                    out.println("<h2>Eh que eres menor!</p>");
                 else {
                     ServicioUsuarios.getInstancia().addUser(nom, edad, email, psswd);
-                    out.println("<h2>Usuario añadido con exito</p>");
+                    out.println("<h2>Usuario añadido</p>");
                 }
             }
             /* TODO output your page here. You may use following sample code. */
@@ -55,7 +55,7 @@ public class Registro extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet Registro</title>");            
             out.println("</head>");
-            out.println("<body bgcolor=\"#CCBBAA\">");
+            out.println("<body>");
             out.println("<h1>Servlet Registro at " + request.getContextPath() + "</h1>");
             
             out.println("</body>");

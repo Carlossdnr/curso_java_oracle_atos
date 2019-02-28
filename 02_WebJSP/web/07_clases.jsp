@@ -1,10 +1,10 @@
 <%-- 
     Document   : 07_clases
-    Created on : 20-feb-2019, 17:25:34
+    Created on : 20-feb-2019, 17:25:26
     Author     : USUARIO
 --%>
 
-<%@page import="com.webjsp.ModeloDatos"%>
+<%@page import="com.webjsp.ModelosDatos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,13 +13,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="cabecera.jsp" %>
-        <%= dameTitulo("Llamando a objeto JAVA") %>
-        <h1>Hello World!</h1>
-        <h3>
-            <%= 
-                new ModeloDatos().getDatos()
-            %>
-        </h3>
+        <%@ include file="cabecera.jsp" %>
+        <%= dameTitulo("Llamando a objeto Java") %> 
+        <h3><%= new ModelosDatos().getDatos() %> </h3>
     </body>
 </html>

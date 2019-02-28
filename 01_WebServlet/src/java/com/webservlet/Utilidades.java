@@ -22,7 +22,7 @@ public class Utilidades {
         if (valor.equals("")) {
             out.println("<h2>El parámetro " 
                 + par 
-                + " no debe estar vacío.");
+                + " no puede estar vacío.");
             return "";
         } else {
             return valor;
